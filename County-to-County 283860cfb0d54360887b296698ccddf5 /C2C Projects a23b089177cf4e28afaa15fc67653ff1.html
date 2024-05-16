@@ -1,0 +1,677 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>C2C Projects</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="a23b0891-77cf-4e28-afaa-15fc67653ff1" class="page sans"><header><img class="page-cover-image" src="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/CroppedBodecanvass4.16.png" style="object-position:center 28.62%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/C2C-FULL-COLOR_BLUE_CIRCLE.png"/></div><h1 class="page-title">C2C Projects</h1><p class="page-description">Work items for C2C</p></header><div class="page-body"><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesTitle"><path d="M0.637695 13.1914C1.0957 13.1914 1.32812 13 1.47852 12.5215L2.24414 10.3887H6.14746L6.90625 12.5215C7.05664 13 7.2959 13.1914 7.74707 13.1914C8.22559 13.1914 8.5332 12.9043 8.5332 12.4531C8.5332 12.2891 8.50586 12.1523 8.44434 11.9678L5.41602 3.79199C5.2041 3.21777 4.82129 2.9375 4.19922 2.9375C3.60449 2.9375 3.21484 3.21777 3.0166 3.78516L-0.0322266 12.002C-0.09375 12.1797 -0.121094 12.3232 -0.121094 12.4668C-0.121094 12.918 0.166016 13.1914 0.637695 13.1914ZM2.63379 9.12402L4.17871 4.68066H4.21973L5.76465 9.12402H2.63379ZM12.2793 13.2324C13.3115 13.2324 14.2891 12.6787 14.7129 11.8037H14.7402V12.5762C14.7471 12.9863 15.0273 13.2393 15.4238 13.2393C15.834 13.2393 16.1143 12.9795 16.1143 12.5215V8.00977C16.1143 6.49902 14.9658 5.52148 13.1543 5.52148C11.7666 5.52148 10.6592 6.08887 10.2695 6.99121C10.1943 7.15527 10.1533 7.3125 10.1533 7.46289C10.1533 7.81152 10.4062 8.04395 10.7686 8.04395C11.0215 8.04395 11.2129 7.94824 11.3496 7.73633C11.7529 6.99121 12.2861 6.65625 13.1064 6.65625C14.0977 6.65625 14.6992 7.20996 14.6992 8.1123V8.67285L12.5664 8.7959C10.7686 8.8916 9.77734 9.69824 9.77734 11.0107C9.77734 12.3369 10.8096 13.2324 12.2793 13.2324ZM12.6621 12.1387C11.8008 12.1387 11.2129 11.667 11.2129 10.9561C11.2129 10.2725 11.7598 9.82129 12.7578 9.75977L14.6992 9.62988V10.3203C14.6992 11.3457 13.7969 12.1387 12.6621 12.1387Z"></path></svg></span>Project name</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesStatus"><path d="M8.75488 1.02344C8.75488 0.613281 8.41309 0.264648 8.00293 0.264648C7.59277 0.264648 7.25098 0.613281 7.25098 1.02344V3.11523C7.25098 3.51855 7.59277 3.86719 8.00293 3.86719C8.41309 3.86719 8.75488 3.51855 8.75488 3.11523V1.02344ZM3.91504 5.0293C4.20215 5.31641 4.69434 5.32324 4.97461 5.03613C5.26855 4.74902 5.26855 4.25684 4.98145 3.96973L3.53906 2.52051C3.25195 2.2334 2.7666 2.21973 2.47949 2.50684C2.19238 2.79395 2.18555 3.28613 2.47266 3.57324L3.91504 5.0293ZM10.9629 4.01758C10.6826 4.30469 10.6826 4.79688 10.9697 5.08398C11.2568 5.37109 11.749 5.36426 12.0361 5.07715L13.4854 3.62793C13.7725 3.34082 13.7725 2.84863 13.4785 2.55469C13.1982 2.27441 12.7061 2.27441 12.4189 2.56152L10.9629 4.01758ZM15.0234 8.78906C15.4336 8.78906 15.7822 8.44727 15.7822 8.03711C15.7822 7.62695 15.4336 7.28516 15.0234 7.28516H12.9385C12.5283 7.28516 12.1797 7.62695 12.1797 8.03711C12.1797 8.44727 12.5283 8.78906 12.9385 8.78906H15.0234ZM0.975586 7.28516C0.56543 7.28516 0.223633 7.62695 0.223633 8.03711C0.223633 8.44727 0.56543 8.78906 0.975586 8.78906H3.07422C3.48438 8.78906 3.83301 8.44727 3.83301 8.03711C3.83301 7.62695 3.48438 7.28516 3.07422 7.28516H0.975586ZM12.0361 10.9902C11.749 10.71 11.2568 10.71 10.9629 10.9971C10.6826 11.2842 10.6826 11.7764 10.9697 12.0635L12.4258 13.5127C12.7129 13.7998 13.2051 13.793 13.4922 13.5059C13.7793 13.2256 13.7725 12.7266 13.4854 12.4395L12.0361 10.9902ZM2.52051 12.4395C2.22656 12.7266 2.22656 13.2188 2.50684 13.5059C2.79395 13.793 3.28613 13.7998 3.57324 13.5127L5.02246 12.0703C5.31641 11.7832 5.31641 11.291 5.03613 11.0039C4.74902 10.7168 4.25684 10.71 3.96973 10.9971L2.52051 12.4395ZM8.75488 12.9658C8.75488 12.5557 8.41309 12.207 8.00293 12.207C7.59277 12.207 7.25098 12.5557 7.25098 12.9658V15.0576C7.25098 15.4609 7.59277 15.8096 8.00293 15.8096C8.41309 15.8096 8.75488 15.4609 8.75488 15.0576V12.9658Z"></path></svg></span>Status</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesPerson"><path d="M10.9536 7.90088C12.217 7.90088 13.2559 6.79468 13.2559 5.38525C13.2559 4.01514 12.2114 2.92017 10.9536 2.92017C9.70142 2.92017 8.65137 4.02637 8.65698 5.39087C8.6626 6.79468 9.69019 7.90088 10.9536 7.90088ZM4.4231 8.03003C5.52368 8.03003 6.42212 7.05859 6.42212 5.83447C6.42212 4.63843 5.51245 3.68945 4.4231 3.68945C3.33374 3.68945 2.41846 4.64966 2.41846 5.84009C2.42407 7.05859 3.32251 8.03003 4.4231 8.03003ZM1.37964 13.168H5.49561C4.87231 12.292 5.43384 10.6074 6.78711 9.51807C6.18628 9.14746 5.37769 8.87231 4.4231 8.87231C1.95239 8.87231 0.262207 10.6917 0.262207 12.1628C0.262207 12.7974 0.548584 13.168 1.37964 13.168ZM7.50024 13.168H14.407C15.4009 13.168 15.7322 12.8423 15.7322 12.2864C15.7322 10.8489 13.8679 8.88354 10.9536 8.88354C8.04492 8.88354 6.17505 10.8489 6.17505 12.2864C6.17505 12.8423 6.50635 13.168 7.50024 13.168Z"></path></svg></span>Owner</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>Link</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesSelect"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM7.62402 10.6348C7.79492 10.915 8.20508 10.9287 8.37598 10.6348L10.666 6.73145C10.8574 6.41016 10.7002 6.04102 10.3652 6.04102H5.62793C5.29297 6.04102 5.14941 6.43066 5.32031 6.73145L7.62402 10.6348Z"></path></svg></span>Priority</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesDate"><path d="M3.29688 14.4561H12.7031C14.1797 14.4561 14.9453 13.6904 14.9453 12.2344V3.91504C14.9453 2.45215 14.1797 1.69336 12.7031 1.69336H3.29688C1.82031 1.69336 1.05469 2.45215 1.05469 3.91504V12.2344C1.05469 13.6973 1.82031 14.4561 3.29688 14.4561ZM3.27637 13.1162C2.70898 13.1162 2.39453 12.8154 2.39453 12.2207V5.9043C2.39453 5.30273 2.70898 5.00879 3.27637 5.00879H12.71C13.2842 5.00879 13.6055 5.30273 13.6055 5.9043V12.2207C13.6055 12.8154 13.2842 13.1162 12.71 13.1162H3.27637ZM6.68066 7.38086H7.08398C7.33008 7.38086 7.41211 7.30566 7.41211 7.05957V6.66309C7.41211 6.41699 7.33008 6.3418 7.08398 6.3418H6.68066C6.44141 6.3418 6.35938 6.41699 6.35938 6.66309V7.05957C6.35938 7.30566 6.44141 7.38086 6.68066 7.38086ZM8.92285 7.38086H9.31934C9.56543 7.38086 9.64746 7.30566 9.64746 7.05957V6.66309C9.64746 6.41699 9.56543 6.3418 9.31934 6.3418H8.92285C8.67676 6.3418 8.59473 6.41699 8.59473 6.66309V7.05957C8.59473 7.30566 8.67676 7.38086 8.92285 7.38086ZM11.1582 7.38086H11.5547C11.8008 7.38086 11.8828 7.30566 11.8828 7.05957V6.66309C11.8828 6.41699 11.8008 6.3418 11.5547 6.3418H11.1582C10.9121 6.3418 10.8301 6.41699 10.8301 6.66309V7.05957C10.8301 7.30566 10.9121 7.38086 11.1582 7.38086ZM4.44531 9.58203H4.84863C5.09473 9.58203 5.17676 9.50684 5.17676 9.26074V8.86426C5.17676 8.61816 5.09473 8.54297 4.84863 8.54297H4.44531C4.20605 8.54297 4.12402 8.61816 4.12402 8.86426V9.26074C4.12402 9.50684 4.20605 9.58203 4.44531 9.58203ZM6.68066 9.58203H7.08398C7.33008 9.58203 7.41211 9.50684 7.41211 9.26074V8.86426C7.41211 8.61816 7.33008 8.54297 7.08398 8.54297H6.68066C6.44141 8.54297 6.35938 8.61816 6.35938 8.86426V9.26074C6.35938 9.50684 6.44141 9.58203 6.68066 9.58203ZM8.92285 9.58203H9.31934C9.56543 9.58203 9.64746 9.50684 9.64746 9.26074V8.86426C9.64746 8.61816 9.56543 8.54297 9.31934 8.54297H8.92285C8.67676 8.54297 8.59473 8.61816 8.59473 8.86426V9.26074C8.59473 9.50684 8.67676 9.58203 8.92285 9.58203ZM11.1582 9.58203H11.5547C11.8008 9.58203 11.8828 9.50684 11.8828 9.26074V8.86426C11.8828 8.61816 11.8008 8.54297 11.5547 8.54297H11.1582C10.9121 8.54297 10.8301 8.61816 10.8301 8.86426V9.26074C10.8301 9.50684 10.9121 9.58203 11.1582 9.58203ZM4.44531 11.7832H4.84863C5.09473 11.7832 5.17676 11.708 5.17676 11.4619V11.0654C5.17676 10.8193 5.09473 10.7441 4.84863 10.7441H4.44531C4.20605 10.7441 4.12402 10.8193 4.12402 11.0654V11.4619C4.12402 11.708 4.20605 11.7832 4.44531 11.7832ZM6.68066 11.7832H7.08398C7.33008 11.7832 7.41211 11.708 7.41211 11.4619V11.0654C7.41211 10.8193 7.33008 10.7441 7.08398 10.7441H6.68066C6.44141 10.7441 6.35938 10.8193 6.35938 11.0654V11.4619C6.35938 11.708 6.44141 11.7832 6.68066 11.7832ZM8.92285 11.7832H9.31934C9.56543 11.7832 9.64746 11.708 9.64746 11.4619V11.0654C9.64746 10.8193 9.56543 10.7441 9.31934 10.7441H8.92285C8.67676 10.7441 8.59473 10.8193 8.59473 11.0654V11.4619C8.59473 11.708 8.67676 11.7832 8.92285 11.7832Z"></path></svg></span>Dates</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/activity_gray.svg" style="width:14px;height:14px"/></span>Completion</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/no-entry_gray.svg" style="width:14px;height:14px"/></span>Blocked By</th></tr></thead><tbody><tr id="981b5ee5-63bd-42a7-b461-c467aace356c"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/Velcro%20Worksheet%20for%20June%209%20Canvass%20(Cohn%20Everitt)%20981b5ee563bd42a7b461c467aace356c.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>Velcro Worksheet for June 9 Canvass (Cohn/Everitt)</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span></td><td class="cell-CqGL"><a href="https://docs.google.com/spreadsheets/d/1IfZsihNCWDrqQjeSS0ApUmpN1gt1QvQDKGIX5jmwYIs/edit?usp=drive_link">https://docs.google.com/spreadsheets/d/1IfZsihNCWDrqQjeSS0ApUmpN1gt1QvQDKGIX5jmwYIs/edit?usp=drive_link</a></td><td class="cell-notion://projects/priority_property"></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="4923c84a-c4e2-4a56-b947-e10ea85dc4c9"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/C2C%20NoC%20Graphic%204923c84ac4e24a56b947e10ea85dc4c9.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>C2C/NoC Graphic</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span></td><td class="cell-CqGL"></td><td class="cell-notion://projects/priority_property"></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="8e7ee19c-2c5c-49e7-8c81-538a95731366"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/Newsletter%20blog%208e7ee19c2c5c49e78c81538a95731366.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>Newsletter blog</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span></td><td class="cell-CqGL"></td><td class="cell-notion://projects/priority_property"></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="71523806-7979-4085-9c77-65ba5473be7c"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/Phone%20bank%20graphic%20on%20Claire%E2%80%99s%20candidate%20page%2071523806797940859c7765ba5473be7c.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>Phone bank graphic on Claire’s candidate page</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span></td><td class="cell-CqGL"></td><td class="cell-notion://projects/priority_property"></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="cf6b7a62-96aa-4322-9b70-28207e2838a0"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/Help%20me%20find%20donors%20cf6b7a6296aa43229b7028207e2838a0.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>Help me find donors</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span></td><td class="cell-CqGL"></td><td class="cell-notion://projects/priority_property"></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="0db3c3b0-a271-4ac3-b5f7-3c365f4ff451"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/Mo%20Green%20Host%20Committee%20Sign%200db3c3b0a2714ac3b5f73c365f4ff451.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>Mo Green Host Committee Sign</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span></td><td class="cell-CqGL"><a href="https://www.canva.com/design/DAGErr33i9g/45jiKvdCPJU5Obddl017pw/edit?utm_content=DAGErr33i9g&amp;utm_campaign=designshare&amp;utm_medium=link2&amp;utm_source=sharebutton">https://www.canva.com/design/DAGErr33i9g/45jiKvdCPJU5Obddl017pw/edit?utm_content=DAGErr33i9g&amp;utm_campaign=designshare&amp;utm_medium=link2&amp;utm_source=sharebutton</a></td><td class="cell-notion://projects/priority_property"></td><td class="cell-notion://projects/project_dates_property"><time>@May 13, 2024</time></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="12110a6e-802e-4387-abde-ba52d5945f65"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/Note%20Writer%20Column%2012110a6e802e4387abdeba52d5945f65.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>Note Writer Column</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span></td><td class="cell-CqGL"></td><td class="cell-notion://projects/priority_property"><span class="selected-value select-value-color-red">High</span></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="0bc6c823-25dd-4c61-a53a-8542e2d290b9"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/CTA%20schedule%20graphic%200bc6c82325dd4c61a53a8542e2d290b9.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>CTA schedule graphic</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span></td><td class="cell-CqGL"><a href="https://www.canva.com/design/DAGEptCb2ZA/GVzKXK9a93P1A63v3GpziA/edit?utm_content=DAGEptCb2ZA&amp;utm_campaign=designshare&amp;utm_medium=link2&amp;utm_source=sharebutton">https://www.canva.com/design/DAGEptCb2ZA/GVzKXK9a93P1A63v3GpziA/edit?utm_content=DAGEptCb2ZA&amp;utm_campaign=designshare&amp;utm_medium=link2&amp;utm_source=sharebutton</a></td><td class="cell-notion://projects/priority_property"><span class="selected-value select-value-color-yellow">Medium</span></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="6e709853-cfe1-4631-9d2f-70896fe4f72e"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/SLIDES!%206e709853cfe146319d2f70896fe4f72e.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>SLIDES!</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span></td><td class="cell-CqGL"></td><td class="cell-notion://projects/priority_property"><span class="selected-value select-value-color-red">High</span></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="f017a2e9-8aef-490a-a536-60fbac2a2929"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/New%20Business%20Cards%20f017a2e98aef490aa53660fbac2a2929.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>New Business Cards</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span></td><td class="cell-CqGL"></td><td class="cell-notion://projects/priority_property"></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="ba4ffde1-4414-4d9c-a417-8eb9985b635e"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/Bit%20ly%20for%20Mo%20Green%20ba4ffde144144d9ca4178eb9985b635e.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>Bit.ly for Mo Green</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span></td><td class="cell-CqGL"><a href="http://bit.ly/wecan-may17">bit.ly/wecan-may17</a></td><td class="cell-notion://projects/priority_property"></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="c60f755f-09f9-428e-9f54-ece62fb68878"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/Kempner%20Phone%20Bank%20c60f755f09f9428e9f54ece62fb68878.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>Kempner Phone Bank</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span></td><td class="cell-CqGL"></td><td class="cell-notion://projects/priority_property"></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="5358a9c8-6dde-4ed7-9d9a-753b6c97e109"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/House%20party%20graphic%205358a9c86dde4ed79d9a753b6c97e109.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>House party graphic</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span></td><td class="cell-CqGL"><a href="https://www.canva.com/design/DAF0DBJOFGQ/CGViPSYmPdFeP4E8AjgGew/edit?utm_content=DAF0DBJOFGQ&amp;utm_campaign=designshare&amp;utm_medium=link2&amp;utm_source=sharebutton">https://www.canva.com/design/DAF0DBJOFGQ/CGViPSYmPdFeP4E8AjgGew/edit</a></td><td class="cell-notion://projects/priority_property"></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="9151cfb7-1a04-4bb9-9e04-3c49a66c544b"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/Postcard%20list%20for%20Kempner%209151cfb71a044bb99e043c49a66c544b.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>Postcard list for Kempner </a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span></td><td class="cell-CqGL"></td><td class="cell-notion://projects/priority_property"></td><td class="cell-notion://projects/project_dates_property"><time>@May 1, 2024</time></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="c4e79d0f-4944-44f0-8b97-ed316e1a2448"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/Fundraising%20Invite%20Graphic%20c4e79d0f494444f08b97ed316e1a2448.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>Fundraising Invite Graphic</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-notion://projects/people_property"></td><td class="cell-CqGL"><a href="https://www.canva.com/design/DAF0DBJOFGQ/CGViPSYmPdFeP4E8AjgGew/edit">https://www.canva.com/design/DAF0DBJOFGQ/CGViPSYmPdFeP4E8AjgGew/edit</a></td><td class="cell-notion://projects/priority_property"></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="73d8e7d5-548b-4dac-95eb-25e5d8c601be"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/Spanish%20websites%20for%20Mercer%20and%20Wilkins%2073d8e7d5548b4dac95eb25e5d8c601be.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>Spanish websites for Mercer and Wilkins</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span></td><td class="cell-CqGL"></td><td class="cell-notion://projects/priority_property"></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="15b29b3d-f812-4035-aa31-19cb772f3ab7"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/Bradley%20Postcard%20Addresses%2015b29b3df8124035aa3119cb772f3ab7.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>Bradley Postcard Addresses</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span></td><td class="cell-CqGL"></td><td class="cell-notion://projects/priority_property"></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="2533febe-feac-4614-adc3-001f818cf58d"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/1%204%20Sheets%20for%20April%2021%202533febefeac4614adc3001f818cf58d.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>1/4 Sheets for April 21</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span></td><td class="cell-CqGL"><a href="https://www.dropbox.com/scl/fi/wbqy0n3grxtu2rjcwyhkd/DONATE-HANDOUT-4-17.pdf?rlkey=o9jmvzputso4aad875e0h0b33&amp;dl=0">https://www.dropbox.com/scl/fi/wbqy0n3grxtu2rjcwyhkd/DONATE-HANDOUT-4-17.pdf?rlkey=o9jmvzputso4aad875e0h0b33&amp;dl=0</a></td><td class="cell-notion://projects/priority_property"><span class="selected-value select-value-color-yellow">Medium</span></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="bda394be-697a-4ba3-826d-d4977046ff2f"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/Videos%20for%20Claire%20Kempner%20bda394be697a4ba3826dd4977046ff2f.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>Videos for Claire Kempner</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span></td><td class="cell-CqGL"><a href="https://drive.google.com/open?id=12nP2kjDDmBhdMAPWd0uvbfE0sQs-X4us&amp;usp=drive_fs">https://drive.google.com/open?id=12nP2kjDDmBhdMAPWd0uvbfE0sQs-X4us&amp;usp=drive_fs</a></td><td class="cell-notion://projects/priority_property"></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="825fbc08-3e40-4a4e-8e85-02eb49f7c559"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/Pittman,%20Wikins,%20Mercer%20825fbc083e404a4e8e8502eb49f7c559.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>Pittman, Wikins, Mercer</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span></td><td class="cell-CqGL"><a href="https://www.canva.com/design/DAGCq2yDhO4/t4K4la1iXWEfKzZevkdgFw/edit?utm_content=DAGCq2yDhO4&amp;utm_campaign=designshare&amp;utm_medium=link2&amp;utm_source=sharebutton">https://www.canva.com/design/DAGCq2yDhO4/t4K4la1iXWEfKzZevkdgFw/edit?utm_content=DAGCq2yDhO4&amp;utm_campaign=designshare&amp;utm_medium=link2&amp;utm_source=sharebutton</a></td><td class="cell-notion://projects/priority_property"><span class="selected-value select-value-color-red">High</span></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="5ab90478-6da3-4b87-962d-70e6cb81d3e7"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/Donkey%201%204%20sheets%20with%20QR%20code%205ab904786da34b87962d70e6cb81d3e7.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>Donkey 1/4 sheets with QR code</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span></td><td class="cell-CqGL"><a href="https://www.dropbox.com/scl/fi/cdxz950enku4rot7zmxx2/DONATE-HANDOUT-SHD.pdf?rlkey=so0o6qqkbd7ca8z70hv900n4x&amp;dl=0">https://www.dropbox.com/scl/fi/cdxz950enku4rot7zmxx2/DONATE-HANDOUT-SHD.pdf?rlkey=so0o6qqkbd7ca8z70hv900n4x&amp;dl=0</a></td><td class="cell-notion://projects/priority_property"><span class="selected-value select-value-color-red">High</span></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="8ac98d89-7ff2-4871-bd20-cbb4e7764c53"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/Fix%20Canvassing%20Dos%20and%20Dont%E2%80%99s%208ac98d897ff24871bd20cbb4e7764c53.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>Fix Canvassing Dos and Dont’s</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span></td><td class="cell-CqGL"><a href="https://www.dropbox.com/scl/fi/zkdvwa22lbcug6g9kndsx/CANVASS-SAFELY-2UP.pdf?rlkey=2wnak8gvbx8k3exeu285bqv1r&amp;dl=0">https://www.dropbox.com/scl/fi/zkdvwa22lbcug6g9kndsx/CANVASS-SAFELY-2UP.pdf?rlkey=2wnak8gvbx8k3exeu285bqv1r&amp;dl=0</a></td><td class="cell-notion://projects/priority_property"><span class="selected-value select-value-color-red">High</span></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="e918b678-d454-44ac-bd60-125d56663829"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/1%204%20Donation%20Sheet%20Stratton%20e918b678d45444acbd60125d56663829.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>1/4 Donation Sheet Stratton</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span></td><td class="cell-CqGL"><a href="https://www.dropbox.com/scl/fi/8x3amo4kb16s4khpj9cjk/DONATE-HANDOUT-CJA.pdf?rlkey=6nov5q8lssqdvi8olxd6gkvg6&amp;dl=0">https://www.dropbox.com/scl/fi/8x3amo4kb16s4khpj9cjk/DONATE-HANDOUT-CJA.pdf?rlkey=6nov5q8lssqdvi8olxd6gkvg6&amp;dl=0</a></td><td class="cell-notion://projects/priority_property"><span class="selected-value select-value-color-red">High</span></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="cbd4c24f-9036-47a6-90fa-bdd0d974e2a6"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/Update%20postcards%20for%20Diamond%20using%20new%20photos%20cbd4c24f903647a690fabdd0d974e2a6.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>Update postcards for Diamond using new photos</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span></td><td class="cell-CqGL"><a href="https://www.dropbox.com/scl/fi/rzlh1p6zv26mwr2yh9602/DIAMOND-POSTCARD-2024.pdf?rlkey=88e6rfo9r6e8qgi5a7j9txeba&amp;dl=0">https://www.dropbox.com/scl/fi/rzlh1p6zv26mwr2yh9602/DIAMOND-POSTCARD-2024.pdf?rlkey=88e6rfo9r6e8qgi5a7j9txeba&amp;dl=0</a></td><td class="cell-notion://projects/priority_property"><span class="selected-value select-value-color-yellow">Medium</span></td><td class="cell-notion://projects/project_dates_property"><time>@April 13, 2024</time></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="55ee9def-ec04-45ff-aea3-2c382e68de1a"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/Google%20Form%20for%20LET%20Toolkit%2055ee9defec0445ffaea32c382e68de1a.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>Google Form for LET Toolkit</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span></td><td class="cell-CqGL"></td><td class="cell-notion://projects/priority_property"></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="50dc17c9-689c-4aec-9830-4d50ad910978"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/Add%20a%20column%20in%20Contributions%20spreadsheet%2050dc17c9689c4aec98304d50ad910978.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>Add a column in Contributions spreadsheet</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span></td><td class="cell-CqGL"></td><td class="cell-notion://projects/priority_property"><span class="selected-value select-value-color-red">High</span></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="7b8ef518-9db7-44dd-85d2-8fb1889dc19a"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/1%204%20sheet%20with%20donate%20info%207b8ef5189db744dd85d28fb1889dc19a.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>1/4 sheet with donate info</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span></td><td class="cell-CqGL"></td><td class="cell-notion://projects/priority_property"><span class="selected-value select-value-color-red">High</span></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="79278855-bff3-4eaa-93c0-91fdff741588"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/Spanish%20Websites%20for%20Kempner%20and%20Sidman%2079278855bff34eaa93c091fdff741588.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>Spanish Websites for Kempner and Sidman</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span></td><td class="cell-CqGL"></td><td class="cell-notion://projects/priority_property"><span class="selected-value select-value-color-yellow">Medium</span></td><td class="cell-notion://projects/project_dates_property"><time>@April 13, 2024</time></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="c44addbc-5410-4df2-8d65-d90e3fafa93e"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/Clean%20Up%20April%2014%20Zoom%20Slides%20(Slide%2017)%20c44addbc54104df28d65d90e3fafa93e.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>Clean Up April 14 Zoom Slides (Slide 17)</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span></td><td class="cell-CqGL"><a href="https://www.canva.com/design/DAFhNSeeo0o/UDxrveKbdl0GYPDu-bmIgw/edit?utm_content=DAFhNSeeo0o&amp;utm_campaign=designshare&amp;utm_medium=link2&amp;utm_source=sharebutton">https://www.canva.com/design/DAFhNSeeo0o/UDxrveKbdl0GYPDu-bmIgw/edit?utm_content=DAFhNSeeo0o&amp;utm_campaign=designshare&amp;utm_medium=link2&amp;utm_source=sharebutton</a></td><td class="cell-notion://projects/priority_property"><span class="selected-value select-value-color-red">High</span></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="14e1a233-0ded-4d16-a5be-74c9fe1706dd"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/Lorenza%20Wilkins%20Website%2014e1a2330ded4d16a5be74c9fe1706dd.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>Lorenza Wilkins Website</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span></td><td class="cell-CqGL"><a href="https://www.lorenzawilkinsfornc.com/">https://www.lorenzawilkinsfornc.com/</a></td><td class="cell-notion://projects/priority_property"><span class="selected-value select-value-color-red">High</span></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="62e6b6ae-6ae6-4b46-b31b-be77a5e8d684"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/Slides%20for%20Down%20East%20Panel%2062e6b6ae6ae64b46b31bbe77a5e8d684.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>Slides for Down East Panel</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span></td><td class="cell-CqGL"></td><td class="cell-notion://projects/priority_property"><span class="selected-value select-value-color-red">High</span></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="57d4c5a6-76a8-487a-bf5e-17638d21a529"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/Mo%20Green%20Graphic%20for%20C2C%20Fundraiser%205%2017%2057d4c5a676a8487abf5e17638d21a529.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>Mo Green Graphic for C2C Fundraiser 5/17</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span></td><td class="cell-CqGL"><a href="https://www.canva.com/design/DAGBklSzH_w/QUiT4nfmyoSXAiZSFsU_SQ/edit?utm_content=DAGBklSzH_w&amp;utm_campaign=designshare&amp;utm_medium=link2&amp;utm_source=sharebutton">https://www.canva.com/design/DAGBklSzH_w/QUiT4nfmyoSXAiZSFsU_SQ/edit</a></td><td class="cell-notion://projects/priority_property"><span class="selected-value select-value-color-red">High</span></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="48a56c10-00a2-4636-8b55-11d13ffd13f6"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/Grafstein%20Postcard%20List%2048a56c1000a246368b5511d13ffd13f6.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>Grafstein Postcard List</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span></td><td class="cell-CqGL"><a href="https://www.dropbox.com/scl/fi/dq4s4y3l4l3i2lt5aob14/GRAFSTEIN_2024-04-05_1000.pdf?rlkey=80fx3k1vr5kszglvnyndblnhz&amp;dl=0">https://www.dropbox.com/scl/fi/dq4s4y3l4l3i2lt5aob14/GRAFSTEIN_2024-04-05_1000.pdf?rlkey=80fx3k1vr5kszglvnyndblnhz&amp;dl=0</a></td><td class="cell-notion://projects/priority_property"><span class="selected-value select-value-color-red">High</span></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="00bc1263-6697-4547-837f-66dc3dfa5db5"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/Candidate%20Intro%20Doc%2000bc126366974547837f66dc3dfa5db5.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>Candidate Intro Doc</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-notion://projects/people_property"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">L</span></span>Laura</span></td><td class="cell-CqGL"></td><td class="cell-notion://projects/priority_property"></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup">1</td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="c2dc04fd-af5a-406c-873f-f9677372bba5"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/Learn%20NGP%20VAN%20c2dc04fdaf5a406c873ff9677372bba5.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>Learn NGP VAN</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">L</span></span>Laura</span></td><td class="cell-CqGL"></td><td class="cell-notion://projects/priority_property"><span class="selected-value select-value-color-red">High</span></td><td class="cell-notion://projects/project_dates_property"><time>@December 20, 2023 → December 29, 2023</time></td><td class="cell-notion://projects/completion_rollup">1</td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="72a9f647-05d4-46a4-98c8-c26005dcdba8"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/Website%20updates%2072a9f64705d446a498c8c26005dcdba8.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>Website updates</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">L</span></span>Laura</span></td><td class="cell-CqGL"></td><td class="cell-notion://projects/priority_property"><span class="selected-value select-value-color-red">High</span></td><td class="cell-notion://projects/project_dates_property"><time>@December 20, 2023 → December 29, 2023</time></td><td class="cell-notion://projects/completion_rollup">1</td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="a21771df-e7e3-4d6e-b082-0a5164f9fda3"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/Mercer%20Postcard%20a21771dfe7e34d6eb0820a5164f9fda3.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>Mercer Postcard</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-pink"><div class="status-dot status-dot-color-pink"></div>In Review</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span></td><td class="cell-CqGL"></td><td class="cell-notion://projects/priority_property"></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="7834ff00-2142-4a93-8d9b-c0551b597627"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/Canva%20graphics%207834ff0021424a938d9bc0551b597627.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>Canva graphics</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-pink"><div class="status-dot status-dot-color-pink"></div>In Review</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span></td><td class="cell-CqGL"></td><td class="cell-notion://projects/priority_property"></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="2339fb79-0714-4908-a682-9f48682bf472"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/House%20Party%20Invite%202339fb7907144908a6829f48682bf472.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>House Party Invite</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-pink"><div class="status-dot status-dot-color-pink"></div>In Review</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span></td><td class="cell-CqGL"><a href="https://www.canva.com/design/DAF0DBJOFGQ/CGViPSYmPdFeP4E8AjgGew/edit?utm_content=DAF0DBJOFGQ&amp;utm_campaign=designshare&amp;utm_medium=link2&amp;utm_source=sharebutton">https://www.canva.com/design/DAF0DBJOFGQ/CGViPSYmPdFeP4E8AjgGew/edit</a></td><td class="cell-notion://projects/priority_property"></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="26c5d51a-a423-4973-9bd1-de5ce568311a"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/NASH%20Postcard%2026c5d51aa42349739bd1de5ce568311a.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>NASH Postcard</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-pink"><div class="status-dot status-dot-color-pink"></div>In Review</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span></td><td class="cell-CqGL"><a href="https://www.dropbox.com/scl/fi/r7fm41mnv9ep8vq917nh1/NASH-2024.pdf?rlkey=5pu93knu8jf7sjz739omlj6tj&amp;dl=0">https://www.dropbox.com/scl/fi/r7fm41mnv9ep8vq917nh1/NASH-2024.pdf?rlkey=5pu93knu8jf7sjz739omlj6tj&amp;dl=0</a></td><td class="cell-notion://projects/priority_property"></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="1265fd0b-ef4d-4698-939c-6059a9adcca3"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/Lorenza%20Wilkins%20Postcards%201265fd0bef4d4698939c6059a9adcca3.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>Lorenza Wilkins Postcards </a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-pink"><div class="status-dot status-dot-color-pink"></div>In Review</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span></td><td class="cell-CqGL"><a href="https://www.dropbox.com/scl/fi/jqywk77pqxhnuqt8vo8ur/WILKINS-POSTCARD-2024.pdf?rlkey=htuqygmivxefzzcsaji0u3ttv&amp;dl=0">https://www.dropbox.com/scl/fi/jqywk77pqxhnuqt8vo8ur/WILKINS-POSTCARD-2024.pdf?rlkey=htuqygmivxefzzcsaji0u3ttv&amp;dl=0</a></td><td class="cell-notion://projects/priority_property"><span class="selected-value select-value-color-yellow">Medium</span></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr><tr id="854e9808-b970-4224-a943-e8a2d9f08828"><td class="cell-title"><a href="C2C%20Projects%20a23b089177cf4e28afaa15fc67653ff1/Raskin%20Graphics%20854e9808b9704224a943e8a2d9f08828.html"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>Raskin Graphics</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-pink"><div class="status-dot status-dot-color-pink"></div>In Review</span></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp5PAazPHsI6t95lvkjKl42am-Y3wwSfgjNAPpyQxA=s100" class="icon user-icon"/>Jim Baxley</span></td><td class="cell-CqGL"><a href="https://www.canva.com/folder/FAGBkp1V2jU">https://www.canva.com/folder/FAGBkp1V2jU</a></td><td class="cell-notion://projects/priority_property"><span class="selected-value select-value-color-green">Low</span></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/project_blocked_by_relation"></td></tr></tbody></table><br/><br/></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
